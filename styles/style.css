@@ -1,0 +1,211 @@
+/* ==========================================================
+   PHARMA COMPLIANCE DASHBOARD - GLOBAL STYLES
+   ========================================================== */
+
+
+/* Main Dashboard Background */
+[data-testid="stAppViewContainer"] {
+    background-color: #F5F7FA;
+}
+/* Streamlit Top Header Background */
+[data-testid="stHeader"] {
+    background-color: #F5F7FA;
+}
+
+.block-container {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    max-width: 1400px;
+}
+
+
+/* ==========================================================
+   DASHBOARD HEADER
+   ========================================================== */
+
+.pharma-header {
+    background: linear-gradient(
+        135deg,
+        #0F4C81 0%,
+        #1976A3 50%,
+        #16A085 100%
+    );
+
+    padding: 35px 25px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+.pharma-title {
+    color: white;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+.pharma-subtitle {
+    color: #EAF6F6;
+    font-size: 17px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .pharma-header {
+        padding: 25px 15px;
+        border-radius: 12px;
+    }
+
+    .pharma-title {
+        font-size: 27px;
+    }
+
+    .pharma-subtitle {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+/* ==========================================================
+   KPI CARDS
+   ========================================================== */
+
+.kpi-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 18px;
+    height: 135px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.kpi-title {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 12px;
+}
+
+.kpi-value {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1F2937;
+}
+
+
+/* Responsive KPI cards */
+
+@media (max-width: 768px) {
+
+    .kpi-card {
+        height: auto;
+        min-height: 120px;
+        padding: 15px;
+    }
+
+    .kpi-value {
+        font-size: 25px;
+    }
+}
+
+/* ==========================================================
+   SIDEBAR STYLING
+   ========================================================== */
+
+/* Main sidebar */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(
+        180deg,
+        #F1F5F9 0%,
+        #E8F3F5 100%
+    );
+    border-right: 1px solid #D7E2E8;
+}
+
+/* Sidebar content padding */
+section[data-testid="stSidebar"] .stSidebarContent {
+    padding-top: 20px;
+}
+
+/* Sidebar heading */
+section[data-testid="stSidebar"] h2 {
+    color: #0F4C81;
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+/* Filter labels */
+section[data-testid="stSidebar"] label {
+    color: #1F2937;
+    font-weight: 600;
+}
+
+/* Select boxes */
+section[data-testid="stSidebar"] div[data-baseweb="select"] > div {
+    background-color: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+    min-height: 45px;
+}
+
+/* Select box hover */
+section[data-testid="stSidebar"] div[data-baseweb="select"] > div:hover {
+    border-color: #1976A3;
+}
+
+/* Sidebar separator */
+section[data-testid="stSidebar"] hr {
+    border-color: #D1D5DB;
+}
+
+
+/* ==========================================================
+   RESPONSIVE CHARTS
+   ========================================================== */
+
+[data-testid="stPlotlyChart"] {
+    width: 100%;
+}
+
+
+/* Tablet Screens */
+
+@media (max-width: 1024px) {
+
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+
+/* Mobile Screens */
+
+@media (max-width: 768px) {
+
+    .block-container {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+    }
+}
