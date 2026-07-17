@@ -209,3 +209,19 @@ section[data-testid="stSidebar"] hr {
         padding-right: 0.8rem;
     }
 }
+.pharma-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.pharma-title span {
+    font-size: 38px;
+    font-weight: 700;
+    color: white;
+}

@@ -4,7 +4,14 @@ import plotly.express as px
 from docx import Document
 from io import BytesIO
 from datetime import datetime
+import base64
 
+
+def get_base64_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(
+            image_file.read()
+        ).decode()
 # ==========================================================
 # LOAD EXTERNAL CSS
 # ==========================================================
@@ -29,29 +36,33 @@ st.set_page_config(
 
 # Load external CSS
 load_css("styles/style.css")
-
 # ==========================================================
 # PROFESSIONAL DASHBOARD HEADER
 # ==========================================================
 
-
-
-header_html = (
-    '<div class="pharma-header">'
-    '<div class="pharma-title">💊 Pharma Compliance Analytics Dashboard</div>'
-    '<div class="pharma-subtitle">'
-    'Compliance Monitoring &nbsp; | &nbsp; '
-    'Risk Analytics &nbsp; | &nbsp; '
-    'Management Decision Intelligence'
-    '</div>'
-    '</div>'
+logo_base64 = get_base64_image(
+    "images/image.png"
 )
+
+header_html = f"""
+<div class="pharma-header">
+<div class="pharma-title">
+<img
+src="data:image/png;base64,{logo_base64}"
+style="width:60px; height:60px; max-width:60px; max-height:60px; object-fit:cover; border-radius:50%;"
+>
+<span>Pharma Compliance Analytics Dashboard</span>
+</div>
+<div class="pharma-subtitle">
+Compliance Monitoring &nbsp; | &nbsp; Risk Analytics &nbsp; | &nbsp; Management Decision Intelligence
+</div>
+</div>
+"""
 
 st.markdown(
     header_html,
     unsafe_allow_html=True
 )
-
 # ==========================================================
 # LOAD DATASET
 # ==========================================================
